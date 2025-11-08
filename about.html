@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NaijaPrime Properties | Abuja Real Estate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c5530;
+            --secondary: #e8b954;
+            --accent: #1e40af;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+        }
+
+        .breadcrumb li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb li:after {
+            content: ">";
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+
+        .breadcrumb li:last-child:after {
+            content: "";
+        }
+
+        /* Hero Section */
+        .about-hero {
+            padding: 80px 0;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .experience-years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .experience-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .mv-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .value-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .value-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Story Timeline */
+        .story-timeline {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:before {
+            left: -50px;
+        }
+
+        .timeline-year {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+        }
+
+        /* Team Overview */
+        .team-overview {
+            padding: 80px 0;
+        }
+
+        .team-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .team-stat {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .team-stat-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .team-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .team-stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .award-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .award-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .award-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .award-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(to right, var(--primary), #3a6b40);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-content:before {
+                left: -40px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .auth-buttons {
+                margin-top: 10px;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .experience-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-home fa-2x" style="color: var(--primary);"></i>
+                <h1>Naija<span>Prime</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">Login</button>
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About NaijaPrime Properties</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2>Your Trusted Partner in Abuja Real Estate</h2>
+                    <p>Since 2012, NaijaPrime Properties has been at the forefront of Abuja's real estate market, helping individuals, families, and businesses find their perfect properties. Our deep understanding of the local market, combined with our commitment to excellence, has made us the preferred choice for discerning clients.</p>
+                    <p>We pride ourselves on our integrity, professionalism, and unwavering dedication to our clients' success. Whether you're buying, selling, or renting, our team of experienced professionals is here to guide you every step of the way.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="stat-number">12+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-number">₦15B+</div>
+                            <div class="stat-label">Property Value</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="NaijaPrime Properties Office">
+                    <div class="experience-badge">
+                        <span class="experience-years">12</span>
+                        <span class="experience-text">Years of Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card fade-in">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide exceptional real estate services that exceed our clients' expectations through innovation, integrity, and deep market knowledge. We are committed to making property ownership dreams a reality for every Nigerian.</p>
+                </div>
+                <div class="mv-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be Nigeria's most trusted and innovative real estate company, transforming the property landscape through excellence, technology, and unparalleled customer service.</p>
+                </div>
+                <div class="mv-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="mv-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Our Promise</h3>
+                    <p>We promise to deliver honest, transparent, and professional services that prioritize our clients' interests above all else. Your success is our success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do at NaijaPrime Properties</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with the highest ethical standards, ensuring transparency and honesty in all our dealings.</p>
+                </div>
+                <div class="value-card fade-in" style="animation-delay: 0.1s;">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Client Focus</h3>
+                    <p>Our clients are at the heart of everything we do. We listen, understand, and deliver solutions that meet their unique needs.</p>
+                </div>
+                <div class="value-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every aspect of our service, from property selection to transaction completion.</p>
+                </div>
+                <div class="value-card fade-in" style="animation-delay: 0.3s;">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We embrace technology and innovative approaches to provide cutting-edge real estate solutions.</p>
+                </div>
+                <div class="value-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We are committed to building stronger communities through responsible real estate development and investment.</p>
+                </div>
+                <div class="value-card fade-in" style="animation-delay: 0.5s;">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>Our team consists of highly skilled professionals with deep knowledge of the Abuja real estate market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Timeline -->
+    <section class="story-timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Journey</h2>
+                <p>From humble beginnings to Abuja's leading real estate company</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content fade-in">
+                        <span class="timeline-year">2012</span>
+                        <h3>Foundation</h3>
+                        <p>NaijaPrime Properties was founded with a vision to revolutionize real estate services in Abuja. Started with a small team of 3 dedicated professionals.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content fade-in" style="animation-delay: 0.2s;">
+                        <span class="timeline-year">2014</span>
+                        <h3>First Major Success</h3>
+                        <p>Completed our first major commercial property transaction worth ₦250 million. Expanded our team to 10 professionals and opened our first branch in Maitama.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content fade-in" style="animation-delay: 0.4s;">
+                        <span class="timeline-year">2016</span>
+                        <h3>Market Leadership</h3>
+                        <p>Became one of Abuja's top 5 real estate companies. Launched our property management division and expanded services to include luxury properties.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content fade-in" style="animation-delay: 0.6s;">
+                        <span class="timeline-year">2018</span>
+                        <h3>Technology Integration</h3>
+                        <p>Launched our digital platform with virtual tours and online property valuation tools. Expanded our team to 25 professionals across 3 branches in Abuja.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content fade-in" style="animation-delay: 0.8s;">
+                        <span class="timeline-year">2020</span>
+                        <h3>Industry Recognition</h3>
+                        <p>Received the "Best Real Estate Company in Abuja" award. Surpassed 1,000 successful property transactions with over ₦8 billion in total property value.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content fade-in" style="animation-delay: 1s;">
+                        <span class="timeline-year">2025</span>
+                        <h3>Present Day</h3>
+                        <p>Now serving over 2,500 clients with a team of 35 professionals. Continuing to innovate and set new standards in Nigeria's real estate industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Overview -->
+    <section class="team-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Professional Team</h2>
+                <p>Meet the experts behind our success</p>
+            </div>
+            <div class="team-stats">
+                <div class="team-stat fade-in">
+                    <div class="team-stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="team-stat-number">35+</div>
+                    <div class="team-stat-label">Professional Agents</div>
+                </div>
+                <div class="team-stat fade-in" style="animation-delay: 0.2s;">
+                    <div class="team-stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="team-stat-number">15</div>
+                    <div class="team-stat-label">Years Average Experience</div>
+                </div>
+                <div class="team-stat fade-in" style="animation-delay: 0.4s;">
+                    <div class="team-stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="team-stat-number">98%</div>
+                    <div class="team-stat-label">Client Satisfaction Rate</div>
+                </div>
+                <div class="team-stat fade-in" style="animation-delay: 0.6s;">
+                    <div class="team-stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="team-stat-number">12</div>
+                    <div class="team-stat-label">Areas Covered in Abuja</div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn btn-primary" style="padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-users"></i> Meet Our Team
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Awards & Recognition</h2>
+                <p>Celebrating excellence in real estate services</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card fade-in">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Best Real Estate Company 2023</h3>
+                    <p>Abuja Business Awards</p>
+                </div>
+                <div class="award-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Excellence in Customer Service</h3>
+                    <p>Nigeria Property Awards 2022</p>
+                </div>
+                <div class="award-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Top Property Consultant</h3>
+                    <p>West Africa Real Estate Summit 2021</p>
+                </div>
+                <div class="award-card fade-in" style="animation-delay: 0.6s;">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Innovation in Real Estate</h3>
+                    <p>Tech & Property Awards 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Work With Abuja's Leading Real Estate Experts?</h2>
+            <p>Join thousands of satisfied clients who have found their dream properties with NaijaPrime Properties</p>
+            <div class="cta-buttons">
+                <button class="btn" style="background: var(--secondary); color: var(--dark); padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-phone"></i> 09024056004
+                </button>
+                <button class="btn" style="background: white; color: var(--primary); padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-envelope"></i> Send Message
+                </button>
+                <button class="btn btn-outline" style="border-color: white; color: white; padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-calendar"></i> Schedule Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>NaijaPrime Properties</h3>
+                    <p>Your trusted partner for premium real estate solutions in Abuja and across Nigeria.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="agents.html">Agents</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Rental Services</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Property Valuation</a></li>
+                        <li><a href="#">Legal Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>Central Business District, Abuja, Nigeria</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>09024056004</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@naijaprimeproperties.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2024</span> NaijaPrime Properties. All rights reserved. | Developed by abeyjoe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in');
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

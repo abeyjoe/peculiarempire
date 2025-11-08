@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - NaijaPrime Properties | Abuja Real Estate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c5530;
+            --secondary: #e8b954;
+            --accent: #1e40af;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+        }
+
+        .breadcrumb li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb li:after {
+            content: ">";
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+
+        .breadcrumb li:last-child:after {
+            content: "";
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            background: var(--light);
+            color: var(--primary);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .service-link:hover {
+            gap: 10px;
+        }
+
+        /* Service Details */
+        .service-details {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .service-tab {
+            padding: 15px 30px;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .service-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .service-tab:hover:not(.active) {
+            background: #e2e8f0;
+        }
+
+        .service-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .service-content.active {
+            display: block;
+        }
+
+        .service-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .service-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .service-info p {
+            margin-bottom: 25px;
+            color: var(--gray);
+        }
+
+        .service-features {
+            margin: 30px 0;
+        }
+
+        .service-features h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .features-list li i {
+            color: var(--primary);
+            margin-top: 3px;
+        }
+
+        .service-cta {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 60%;
+            width: 80%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .process-step h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(to right, var(--primary), #3a6b40);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .service-hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .auth-buttons {
+                margin-top: 10px;
+            }
+
+            .service-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-tab {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-cta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-home fa-2x" style="color: var(--primary);"></i>
+                <h1>Naija<span>Prime</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">Login</button>
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Real Estate Services</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Services</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Real Estate Solutions</h2>
+                <p>We offer a full range of professional real estate services tailored to meet your unique needs in the Abuja property market</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Property Sales</h3>
+                    <p>Find your dream home from our extensive portfolio of verified properties across Abuja's prime locations.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Rental Services</h3>
+                    <p>Discover apartments and houses for rent with flexible terms in secure neighborhoods across Abuja.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Property Management</h3>
+                    <p>Professional management services for landlords and property investors to maximize returns.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-in" style="animation-delay: 0.6s;">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Property Valuation</h3>
+                    <p>Accurate property valuation for sales, purchases, insurance, and investment purposes.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-in" style="animation-delay: 0.8s;">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Legal Services</h3>
+                    <p>Expert legal assistance for property transactions, documentation, and dispute resolution.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-in" style="animation-delay: 1s;">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Land Verification</h3>
+                    <p>Comprehensive land verification services to ensure secure and legitimate property transactions.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Service Details</h2>
+                <p>Learn more about how we can assist you with your real estate needs</p>
+            </div>
+            
+            <div class="service-tabs">
+                <button class="service-tab active" data-service="sales">Property Sales</button>
+                <button class="service-tab" data-service="rentals">Rental Services</button>
+                <button class="service-tab" data-service="management">Property Management</button>
+                <button class="service-tab" data-service="valuation">Property Valuation</button>
+            </div>
+
+            <!-- Property Sales Content -->
+            <div class="service-content active" id="sales-content">
+                <div class="service-hero">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Property Sales">
+                    </div>
+                    <div class="service-info">
+                        <h2>Property Sales Services</h2>
+                        <p>Our comprehensive property sales service connects buyers with their ideal homes while ensuring sellers get the best value for their properties. We specialize in residential and commercial properties across Abuja's most desirable neighborhoods.</p>
+                        
+                        <div class="service-features">
+                            <h3>What We Offer:</h3>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> Extensive portfolio of verified properties</li>
+                                <li><i class="fas fa-check"></i> Professional property valuation</li>
+                                <li><i class="fas fa-check"></i> Negotiation and transaction management</li>
+                                <li><i class="fas fa-check"></i> Legal documentation assistance</li>
+                                <li><i class="fas fa-check"></i> Market analysis and pricing strategy</li>
+                                <li><i class="fas fa-check"></i> Property viewing coordination</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-cta">
+                            <button class="btn btn-primary">Start Property Search</button>
+                            <button class="btn btn-outline">Sell Your Property</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rental Services Content -->
+            <div class="service-content" id="rentals-content">
+                <div class="service-hero">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rental Services">
+                    </div>
+                    <div class="service-info">
+                        <h2>Rental Services</h2>
+                        <p>Find the perfect rental property that matches your lifestyle and budget. We offer a wide range of apartments, duplexes, and bungalows for rent in secure estates and prime locations across Abuja.</p>
+                        
+                        <div class="service-features">
+                            <h3>Our Rental Services Include:</h3>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> Short-term and long-term rentals</li>
+                                <li><i class="fas fa-check"></i> Tenant screening and verification</li>
+                                <li><i class="fas fa-check"></i> Lease agreement preparation</li>
+                                <li><i class="fas fa-check"></i> Property inspection services</li>
+                                <li><i class="fas fa-check"></i> Rent collection and management</li>
+                                <li><i class="fas fa-check"></i> Maintenance coordination</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-cta">
+                            <button class="btn btn-primary">Browse Rentals</button>
+                            <button class="btn btn-outline">List Your Property</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Management Content -->
+            <div class="service-content" id="management-content">
+                <div class="service-hero">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Property Management">
+                    </div>
+                    <div class="service-info">
+                        <h2>Property Management</h2>
+                        <p>Maximize your property investment with our professional management services. We handle all aspects of property management, from tenant relations to maintenance, ensuring your property remains in excellent condition and generates optimal returns.</p>
+                        
+                        <div class="service-features">
+                            <h3>Management Services:</h3>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> Comprehensive tenant management</li>
+                                <li><i class="fas fa-check"></i> Regular property maintenance</li>
+                                <li><i class="fas fa-check"></i> Financial reporting and accounting</li>
+                                <li><i class="fas fa-check"></i> Marketing and tenant acquisition</li>
+                                <li><i class="fas fa-check"></i> Emergency response services</li>
+                                <li><i class="fas fa-check"></i> Legal compliance management</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-cta">
+                            <button class="btn btn-primary">Get Management Quote</button>
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Valuation Content -->
+            <div class="service-content" id="valuation-content">
+                <div class="service-hero">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Property Valuation">
+                    </div>
+                    <div class="service-info">
+                        <h2>Property Valuation</h2>
+                        <p>Get accurate and reliable property valuations for various purposes including sales, purchases, insurance, mortgages, and investment analysis. Our certified valuers use market data and professional expertise to determine your property's true market value.</p>
+                        
+                        <div class="service-features">
+                            <h3>Valuation Services:</h3>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> Market value assessment</li>
+                                <li><i class="fas fa-check"></i> Investment analysis</li>
+                                <li><i class="fas fa-check"></i> Insurance valuation</li>
+                                <li><i class="fas fa-check"></i> Mortgage and loan valuation</li>
+                                <li><i class="fas fa-check"></i> Rental value assessment</li>
+                                <li><i class="fas fa-check"></i> Comprehensive valuation reports</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-cta">
+                            <button class="btn btn-primary">Request Valuation</button>
+                            <button class="btn btn-outline">Download Brochure</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Simple Process</h2>
+                <p>We've streamlined our services to make your real estate journey smooth and efficient</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We begin with understanding your specific needs, preferences, and budget through a detailed consultation.</p>
+                </div>
+                <div class="process-step fade-in" style="animation-delay: 0.2s;">
+                    <div class="step-number">2</div>
+                    <h3>Property Search</h3>
+                    <p>Our experts search for properties that match your criteria from our extensive database.</p>
+                </div>
+                <div class="process-step fade-in" style="animation-delay: 0.4s;">
+                    <div class="step-number">3</div>
+                    <h3>Viewing & Selection</h3>
+                    <p>We arrange property viewings and help you select the perfect option that meets your requirements.</p>
+                </div>
+                <div class="process-step fade-in" style="animation-delay: 0.6s;">
+                    <div class="step-number">4</div>
+                    <h3>Transaction Completion</h3>
+                    <p>We handle all negotiations, documentation, and legal processes to ensure a smooth transaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our real estate services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What areas in Abuja do you cover?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We cover all major areas in Abuja including Maitama, Asokoro, Gwarimpa, Wuse, Central Business District, Jabi, Utako, and surrounding neighborhoods. Our services extend to both residential and commercial properties across the Federal Capital Territory.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do you verify property documents?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have a dedicated legal team that verifies all property documents including Certificate of Occupancy, Governor's Consent, Survey Plans, and other relevant documents. We work with relevant government agencies to ensure all properties we list have genuine and verifiable documentation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are your fees for property sales?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our commission rates are competitive and transparent. For property sales, we typically charge a percentage of the final sale price, which varies based on the property value and services required. We provide a detailed breakdown of all fees during our initial consultation with no hidden charges.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer property management for overseas owners?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in managing properties for overseas owners. We provide regular updates, photos, financial reports, and handle all aspects of property management including tenant screening, rent collection, maintenance, and emergency repairs. We make it easy for you to own property in Nigeria while living abroad.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the property buying process take?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The timeline varies depending on the property type, documentation status, and financing method. Typically, cash purchases can be completed within 4-6 weeks, while mortgage transactions may take 8-12 weeks. We work efficiently to expedite the process while ensuring all legal requirements are properly met.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today to discuss your real estate needs and discover how our services can help you achieve your property goals</p>
+            <div class="cta-buttons">
+                <button class="btn" style="background: var(--secondary); color: var(--dark); padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-phone"></i> 09024056004
+                </button>
+                <button class="btn" style="background: white; color: var(--primary); padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-envelope"></i> Send Message
+                </button>
+                <button class="btn btn-outline" style="border-color: white; color: white; padding: 15px 30px; font-size: 1.1rem;">
+                    <i class="fas fa-calendar"></i> Schedule Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>NaijaPrime Properties</h3>
+                    <p>Your trusted partner for premium real estate solutions in Abuja and across Nigeria.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="agents.html">Agents</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Rental Services</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Property Valuation</a></li>
+                        <li><a href="#">Legal Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>Central Business District, Abuja, Nigeria</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>09024056004</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@naijaprimeproperties.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2024</span> NaijaPrime Properties. All rights reserved. | Developed by abeyjoe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Service tabs functionality
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const serviceContents = document.querySelectorAll('.service-content');
+
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const service = tab.getAttribute('data-service');
+                
+                // Update active tab
+                serviceTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                serviceContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${service}-content`) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // FAQ functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in');
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
